@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,65 +10,117 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #333;
+    padding: 15px 30px;
+    background-color: #333333;
     color: white;
-}
-
-header div img {
-    height: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header nav ul {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 header nav ul li {
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-header form {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+header nav ul li img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    max-width: 100%;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
     gap: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    flex: 1;
+    max-width: 600px;
+    margin: 0 20px;
 }
 
-header form input[type="text"] {
-    padding: 10px;
+#input_Buscador {
+    flex: 1;
+    padding: 10px 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 20px;
     font-size: 16px;
-    width: 350px;
+    height: 20px;
+    margin-top: 12px;
 }
 
-header form button {
-    padding: 10px 20px;
-    background-color: #ff9800;
+#BotonBuscador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
     border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
     cursor: pointer;
 }
 
-header form button:hover {
-    background-color: #e68900;
+#BotonBuscador img {
+    width: 20px;
+    height: 20px;
+}
+
+#BotonBuscador:hover {
+    transform: scale(1.1);
+}
+
+.icon-buscar {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-icons li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
 }
 
 #FILTROS {
@@ -118,7 +169,7 @@ header form button:hover {
     color: #ff9800;
 }
 
-#sel_Cliente  {
+#sel_Cliente {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
@@ -162,12 +213,182 @@ header form button:hover {
     color: #ff5722;
 }
 
-#icono-carrito-lleno{
-
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-
+#icono-carrito-lleno {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
+
+#dire-tarj, #info-tarj {
+    margin-bottom: 20px;
+}
+
+.titulo-seccion-dirpag {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.lb-num-dirpag, .lb-input-dirpag {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"], input [type="tel"],input[type ="email"], input[type="number"], input[type="password"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus, select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+input[type="password"] {
+    letter-spacing: 2px;
+}
+
+select {
+    cursor: pointer;
+}
+
+::placeholder {
+    color: #aaa;
+}
+
+#boton-pago {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#boton-pago:hover {
+    background-color: #218838;
+}
+
+.form-dir-pago {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#inp-dir-dep {
+    background-color: #f8f8f8;
+}
+
+.contenedor {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contenedor label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.contenedor .campo {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+.contenedor .campo:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.contenedor .chec {
+    margin-bottom: 15px;
+}
+
+.contenedor .chec + label {
+    font-size: 14px;
+    color: #555;
+}
+
+.contenedor .centrado a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.contenedor .centrado a:hover {
+    text-decoration: underline;
+}
+
+.contenedor .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.contenedor .btn:hover {
+    background-color: #5a5a5a;
+}
+
+section {
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        padding: 20px;
+    }
+
+    .contenedor h1 {
+        font-size: 20px;
+    }
+
+    .contenedor .campo {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .contenedor .btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+

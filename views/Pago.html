@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Confirma tu Pedido</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+<html>
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="../images/LogoMochila.png" alt="Logo" class="logo"></a>
+        </div>
+        <form action="" method="POST" class="search-form">
+            <input type="text" name="Buscador" id="input_Buscador" value="Buscar Producto">
+            <button type="submit" name="BotonBuscador" id="BotonBuscador"> <img src="../images/searchIcon.png" alt="Buscar" class="icon-buscar"> </button>
+        </form>
+        <nav>
+            <ul>
+                <li class="icon" id="icono-ubicacion"><a href="#Ubicanos">
+                    <img src="../images/Ubicacion.png" alt="Ubicanos" class="icono-ubicacion">
+                </a></li>
+
+                <li class="icon" id="icono-login"><a href="#Iniciar Sesión">
+                    <img src="../images/Login.png" alt="Login" class="icono-carrito-vacio">
+                </a></li>
+
+                <li class="icon" id="icono-carrito-vacio"><a href="#Carrito de Compras">
+                    <img src="../images/cartEmpty.png" alt="Carrito Vacio" class="icono-carrito-vacio">
+                </a></li>
+
+                <li class="icon" id="icono-carrito-lleno"><a href="#Carrito de Compras">
+                    <img src="../images/cartFull.png" alt="Carrito Full" class="icono-carrito-full">
+                </a></li>
+
+            </ul>
+        </nav>
+    </header>
+  <main>
+    
+    <section id = "dire-tarj">
+    	<form class = "form-dir-pago">
+    	<section id= "dir-entrega"> 
+    		<h2 class = "titulo-seccion-dirpag">Confirma tu dirección</h2>
+          <label class="lb-num-dirpag" for ="inp-dir-calle">Dirección</label>
+          <input type ="text" class = "inp-text-dir" id = "inp-dir-calle" name="inp-dir-calle"  placeholder="Av. Hola Mundo 404" required>
+          <label class="lb-num-dirpag" for="inp-dir-ciudad">Ciudad</label>
+          <input type ="text" class = "inp-text-dir" id = "inp-dir-ciudad" name="inp-dir-ciudad" required>
+          <label class="lb-num-dirpag" for="inp-dir-dep">Departamento</label>
+          <select id="inp-dir-dep" name="inp-dir-dep" required>
+  				<option value="" selected disabled>Seleccione un departamento</option>
+  				<option value="Amazonas">Amazonas</option>
+  				<option value="Áncash">Áncash</option>
+  				<option value="Apurímac">Apurímac</option>
+  				<option value="Arequipa">Arequipa</option>
+  				<option value="Ayacucho">Ayacucho</option>
+  				<option value="Cajamarca">Cajamarca</option>
+  				<option value="Callao">Callao</option>
+  				<option value="Cusco">Cusco</option>
+  				<option value="Huancavelica">Huancavelica</option>
+  				<option value="Huánuco">Huánuco</option>
+  				<option value="Ica">Ica</option>
+  				<option value="Junín">Junín</option>
+  				<option value="La Libertad">La Libertad</option>
+  				<option value="Lambayeque">Lambayeque</option>
+  				<option value="Lima">Lima</option>
+  				<option value="Loreto">Loreto</option>
+  				<option value="Madre de Dios">Madre de Dios</option>
+  				<option value="Moquegua">Moquegua</option>
+  				<option value="Pasco">Pasco</option>
+  				<option value="Piura">Piura</option>
+  				<option value="Puno">Puno</option>
+  				<option value="San Martín">San Martín</option>
+  				<option value="Tacna">Tacna</option>
+  				<option value="Tumbes">Tumbes</option>
+  				<option value="Ucayali">Ucayali</option>
+		</select>
+        <label class="lb-num-dirpag" for ="inp-dir-zip">Zip Code</label>
+        <input type ="number" class = "inp-text-dir" id = "inp-dir-zip" name="inp-dir-zip" required>
+        <label class="lb-num-dirpag" for ="inp-dir-fono">Telefono</label>
+        <input type ="tel" class = "inp-text-dir" id = "inp-dir-tel" name="inp-dir-tel" required>
+          
+    	</section>
+    
+    	<section id = "info-tarj">
+      
+        	<h2 class = "titulo-seccion-dirpag">Confirma tu tarjeta</h2>
+        	<label class="lb-input-dirpag" for ="inp-num-tarj">Nro de Tarjeta</label>
+        	<input id="inp-num-tarj" type="number" pattern="[0-9]{16}" required placeholder="XXXX-XXXX-XXXX-XXXX">
+        
+  			<label class="lb-input-dirpag" for ="mes-tarj">Mes de Expiración</label>
+  			<select id="mes-tarj" name="mes-tarj" required>
+    			<option value="" disabled selected >Selecciona el mes</option>
+    			<option value="01">01</option>
+    			<option value="02">02</option>
+    			<option value="03">03</option>
+    			<option value="04">04</option>
+    			<option value="05">05</option>
+    			<option value="06">06</option>
+    			<option value="07">07</option>
+    			<option value="08">08</option>
+    			<option value="09">09</option>
+    			<option value="10">10</option>
+    			<option value="11">11</option>
+    			<option value="12">12</option>
+  			</select>
+  			<label class = "lb-input-dirpag" for="anno-tarj">Año de caducidad:</label>
+  			<select id="anno-tarj" name="anno-tarj" required>
+    			<option value="" disabled selected >Selecciona el año</option>
+    			<option value="2024">2019</option>
+    			<option value="2024">2020</option>
+    			<option value="2024">2021</option>
+    			<option value="2024">2022</option>
+    			<option value="2024">2023</option>
+    			<option value="2024">2024</option>
+    			<option value="2025">2025</option>
+    			<option value="2026">2026</option>
+    			<option value="2027">2027</option>
+    			<option value="2028">2028</option>
+    			<option value="2029">2029</option>
+  			</select>
+        	<label class = "lb-input-dirpag" for="cod-seg-tarj">CVV/CVC</label>
+        	<input type="password" id="cod-seg-tarj" name ="cod-seg-tarj" maxlength="4" placeholder="123" pattern="\d{3,4}" required>
+            <label class = "lb-input-dirpag" for="nom-tarj">Nombre de Titular</label>
+            <input type="text" id="nom-tarj" name ="nom-tarj" placeholder="Peter Parker" required>
+      </section>
+          <button type="submit" id="boton-pago"> Confirma Pago</button>
+      </form>      
+    </section>
+  </main>
+  <footer>
+    AQUI VA EL FOOTER
+  </footer>
+  </html>
+</body>
+</html>
