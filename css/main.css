@@ -1,3 +1,24 @@
+@media screen and (max-width: 768px) {
+    .contenedor {
+        padding: 20px;
+    }
+
+    .contenedor h1 {
+        font-size: 20px;
+    }
+
+    .contenedor .campo {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .contenedor .btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -58,17 +79,17 @@ header nav ul li img {
     margin: 0 20px;
 }
 
-#input_Buscador {
+#input_buscador {
     flex: 1;
     padding: 10px 15px;
     border: 1px solid #ddd;
     border-radius: 20px;
     font-size: 16px;
     height: 20px;
-    margin-top: 12px;
+    margin-top: 2px;
 }
 
-#BotonBuscador {
+#boton-buscador {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,12 +101,12 @@ header nav ul li img {
     cursor: pointer;
 }
 
-#BotonBuscador img {
+#boton-buscador img {
     width: 20px;
     height: 20px;
 }
 
-#BotonBuscador:hover {
+#boton-buscador:hover {
     transform: scale(1.1);
 }
 
@@ -104,12 +125,6 @@ header nav ul li img {
     align-items: center;
 }
 
-.nav-icons li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
 
 .icon {
     width: 20px;
@@ -123,53 +138,50 @@ header nav ul li img {
     opacity: 0.8;
 }
 
-#FILTROS {
-    margin-bottom: 30px;
+#filtros-index {
     text-align: center;
 }
 
-#FILTROS img {
+#filtros-index img {
     width: 100%;
     max-width: 1200px;
     height: auto;
     object-fit: contain;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.Section_Filtros {
+.section-filtros {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
 }
 
-.Section_Nav {
+.section-nav {
     display: flex;
     gap: 20px;
 }
 
-.Section_Nav #OpcionesProductos {
+.section-nav #opciones-productos {
     display: flex;
     gap: 20px;
 }
 
-.Section_Nav #OpcionesProductos li {
+.section-nav #opciones-productos li {
     list-style: none;
 }
 
-.Section_Nav #OpcionesProductos a {
+.section-nav #opciones-productos a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
 }
 
-.Section_Nav #OpcionesProductos a:hover {
+.section-nav #opciones-productos a:hover {
     color: #ff9800;
 }
 
-#sel_Cliente {
+#sel_cliente {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
@@ -177,13 +189,13 @@ header nav ul li img {
     width: 300px;
 }
 
-#Productos {
+#productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
-.art_Producto {
+.art-producto {
     background-color: white;
     border-radius: 10px;
     padding: 15px;
@@ -191,24 +203,24 @@ header nav ul li img {
     text-align: center;
 }
 
-.art_Producto img {
+.art-producto img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
-.art_Producto h2 {
+.art-producto h2 {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
-.art_Producto p {
+.art-producto p {
     font-size: 14px;
     margin: 5px 0;
 }
 
-.art_Producto .precio_producto {
+.art-producto .precio_producto {
     font-weight: bold;
     color: #ff5722;
 }
@@ -236,16 +248,21 @@ header nav ul li img {
     color: #555;
 }
 
-input[type="text"], input [type="tel"],input[type ="email"], input[type="number"], input[type="password"], select {
+
+.input-form, .inp-text-dir {
+
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+
+
 }
 
-input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus, select:focus {
+
+.input-form:focus, .inp-text-dir:focus {
     border-color: #007BFF;
     outline: none;
 }
@@ -370,25 +387,5 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-
-@media screen and (max-width: 768px) {
-    .contenedor {
-        padding: 20px;
-    }
-
-    .contenedor h1 {
-        font-size: 20px;
-    }
-
-    .contenedor .campo {
-        padding: 8px;
-        font-size: 14px;
-    }
-
-    .contenedor .btn {
-        padding: 10px;
-        font-size: 14px;
-    }
 }
 
