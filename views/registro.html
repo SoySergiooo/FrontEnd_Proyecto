@@ -26,7 +26,7 @@
                 <li class="icon" id="icono-login"><a href="login.html">
                     <img src="../images/Login.png" alt="Login" class="icono-carrito-vacio">
                 </a></li>
-                <li class="icon" id="icono-carrito-vacio"><a href="#Carrito de Compras">
+                <li class="icon" id="icono-carrito-vacio"><a href="carrito-empty.html">
                     <img src="../images/cartEmpty.png" alt="Carrito Vacio" class="icono-carrito-vacio">
                 </a></li>
                 <li class="icon" id="icono-carrito-lleno"><a href="carrito.html">
@@ -38,15 +38,27 @@
 
     <main>
     <section>
-        <div class="contenedor"> 
-        <h1>Regístrate</h1> 
+        <div class="contenedor">
+        <h1>Regístrate</h1>
             <form action="#" method="get">
 
-                <label>Correo electrónico:</label>
-                <input class="input-form" type="email" placeholder="Ingresa tu correo" required><br><br>
+                <label for="nombre-register">Nombres:</label>
+                <input class="input-form" type="text" id="nombre-register" placeholder="Ingresa tus nombres" required><br><br>
 
-                <label>Contraseña:</label>
-                <input class="input-form" type="password" placeholder="Ingresa tu contraseña" required><br><br>
+                <label for="apell-register">Apellidos:</label>
+                <input class="input-form" type="text" id="apell-register" placeholder="Ingresa tus apellidos" required><br><br>
+
+                <label for="email-register">Correo electrónico:</label>
+                <input class="input-form" type="email" id="email-register" placeholder="Ingresa tu correo" required><br><br>
+
+                <label for="dni-register">DNI/CI:</label>
+                <input class="input-form" type="number" id="dni-register" placeholder="Ingresa tu numero de DNI o CI" required><br><br>
+
+                <label for="contr-register">Contraseña:</label>
+                <input class="input-form" type="password" id="contr-register" placeholder="Ingresa tu contraseña" required><br><br>
+
+                <label for="repcontr-register">Repite tu contraseña:</label>
+                <input class="input-form" type="password" id="repcontr-register" placeholder="Ingresa tu nuevamente la contraseña" required><br><br>
 
                 <input class="checkbox" type="checkbox" id="" value="">
                 Acepto los <a href="#"> Términos y Condiciones y Políticas de Privacidad, la política de cookies y recibir novedades y promociones.</a>
@@ -64,5 +76,30 @@
         </div>
     </section>
 </main>
+<footer class="footer">
+    <div class="footer-contenedor">
+        <div class="footer-info">
+            <h3>Mochilonga</h3>
+            <p>Mochilas, maletas y más!</p>
+        </div>
+        <div class="footer-links">
+            <h4>Enlaces Rápidos</h4>
+            <ul>
+                <li><a href="Terminos-condiciones.html">Termino y Condiciones</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="libro-reclam.html">Libro de Reclamaciones</a></li>
+                <li><a href="ayuda.html">Ayuda</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Contáctanos</h4>
+            <p>Email: contacto@mochilonga.com.pe</p>
+            <p>Teléfono: +1 234 567 890</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Mochilonga. Todos los derechos reservados.</p>
+    </div>
+</footer>
 </body>
 </html>

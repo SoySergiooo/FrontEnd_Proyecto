@@ -24,7 +24,7 @@
                 <li class="icon" id="icono-login"><a href="login.html">
                     <img src="../images/Login.png" alt="Login" class="icono-carrito-vacio">
                 </a></li>
-                <li class="icon" id="icono-carrito-vacio"><a href="#Carrito de Compras">
+                <li class="icon" id="icono-carrito-vacio"><a href="carrito-empty.html">
                     <img src="../images/cartEmpty.png" alt="Carrito Vacio" class="icono-carrito-vacio">
                 </a></li>
                 <li class="icon" id="icono-carrito-lleno"><a href="carrito.html">
@@ -36,6 +36,9 @@
   <main>
     
     <section id = "dire-tarj">
+		<div class="volver-container">
+			<a href="carrito.html">← Volver al carrito</a>
+		</div>
     	<form class = "form-dir-pago">
     	<section id= "dir-entrega"> 
     		<h2 class = "titulo-seccion-dirpag">Confirma tu dirección</h2>
@@ -122,12 +125,34 @@
             <input class ="input-form" type="text" id="nom-tarj" name ="nom-tarj" placeholder="Peter Parker" required>
       </section>
           <button type="submit" id="boton-pago"> Confirma Pago</button>
-      </form>      
+      </form>
     </section>
   </main>
-  <footer>
-    AQUI VA EL FOOTER
-  </footer>
+  <footer class="footer">
+	<div class="footer-contenedor">
+		<div class="footer-info">
+			<h3>Mochilonga</h3>
+			<p>Mochilas, maletas y más!</p>
+		</div>
+		<div class="footer-links">
+			<h4>Enlaces Rápidos</h4>
+			<ul>
+				<li><a href="Terminos-condiciones.html">Termino y Condiciones</a></li>
+				<li><a href="contacto.html">Contacto</a></li>
+				<li><a href="libro-reclam.html">Libro de Reclamaciones</a></li>
+				<li><a href="ayuda.html">Ayuda</a></li>
+			</ul>
+		</div>
+		<div class="footer-contact">
+			<h4>Contáctanos</h4>
+			<p>Email: contacto@mochilonga.com.pe</p>
+			<p>Teléfono: +1 234 567 890</p>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<p>&copy; 2024 Mochilonga. Todos los derechos reservados.</p>
+	</div>
+</footer>
   </html>
 </body>
 </html>

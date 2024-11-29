@@ -25,7 +25,7 @@
                 <li class="icon" id="icono-login"><a href="login.html">
                     <img src="../images/Login.png" alt="Login" class="icono-carrito-vacio">
                 </a></li>
-                <li class="icon" id="icono-carrito-vacio"><a href="#Carrito de Compras">
+                <li class="icon" id="icono-carrito-vacio"><a href="carrito-empty.html">
                     <img src="../images/cartEmpty.png" alt="Carrito Vacio" class="icono-carrito-vacio">
                 </a></li>
                 <li class="icon" id="icono-carrito-lleno"><a href="carrito.html">
@@ -35,42 +35,99 @@
         </nav>
     </header>
 
+    <main>
+        <section>
+            <h2>Mi Carrito</h2>
+            <table class="tabla-carrito">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="../images/Cartera A.png" alt="Cartera A" class="imagen-producto"></td>
+                        <td>Cartera A</td>
+                        <td>
+                            <div class="input-cantidad">
+                                <button type="button" class="btn-cantidad">-</button>
+                                <input type="text" value="1" class="cantidad-producto" readonly>
+                                <button type="button" class="btn-cantidad">+</button>
+                            </div>
+                        </td>
+                        <td>S/. 200.00</td>
+                        <td>S/. 200.00</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../images/Mochila A.png" alt="Mochila A" class="imagen-producto"></td>
+                        <td>Mochila A</td>
+                        <td>
+                            <div class="input-cantidad">
+                                <button type="button" class="btn-cantidad">-</button>
+                                <input type="text" value="2" class="cantidad-producto" readonly>
+                                <button type="button" class="btn-cantidad">+</button>
+                            </div>
+                        </td>
+                        <td>S/. 150.00</td>
+                        <td>S/. 300.00</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../images/Maleta A.png" alt="Maleta A" class="imagen-producto"></td>
+                        <td>Maleta A</td>
+                        <td>
+                            <div class="input-cantidad">
+                                <button type="button" class="btn-cantidad">-</button>
+                                <input type="text" value="2" class="cantidad-producto" readonly>
+                                <button type="button" class="btn-cantidad">+</button>
+                            </div>
+                        </td>
+                        <td>S/. 220.00</td>
+                        <td>S/. 440.00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4"><strong>Total</strong></td>
+                        <td><strong>S/. 940.00</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
 
-    <section>
-        <div>
-            <H1>Mi Carrito</H1>
-            <article>
-                <h3>Producto en carr 1</h3>
-                <p>
-                    Precio: S/ 54.00
-                </p>
-                <img src="https://th.bing.com/th/id/OIP.F_Gp8luDobd2MazrdhX50QHaKS?w=139&h=193&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="producto 1">
-            </article>
-            <hr>
-            <article>
-                <h3>Producto en carrito 2</h3>
-                <p>
-                    Precio: S/ 25.00
-                </p>
-                <img src="https://th.bing.com/th/id/OIP.F_Gp8luDobd2MazrdhX50QHaKS?w=139&h=193&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="producto 2">
-            </article>
-            <hr>
-            <article>
-                <h3>Producto en carrito 3</h3
-                <p>
-                    Precio: S/ 40.00
-                </p>
-                <img src="https://th.bing.com/th/id/OIP.F_Gp8luDobd2MazrdhX50QHaKS?w=139&h=193&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="producto 3">
-            </article>
-            <hr>
-            <article>
-                <h3>Producto en carrito 4</h3>
-                <p>
-                    Precio: S/ 32.00
-                </p>
-                <img src="https://th.bing.com/th/id/OIP.F_Gp8luDobd2MazrdhX50QHaKS?w=139&h=193&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="producto 4">
-            </article>
+            <div class="botones-carrito">
+                <a href="index.html" class="btn-regresar">Volver</a>
+                <a class="btn-pago-able" href="Pago.html">Ir a Pagar</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-contenedor">
+            <div class="footer-info">
+                <h3>Mochilonga</h3>
+                <p>Mochilas, maletas y más!</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="Terminos-condiciones.html">Termino y Condiciones</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="libro-reclam.html">Libro de Reclamaciones</a></li>
+                    <li><a href="ayuda.html">Ayuda</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contáctanos</h4>
+                <p>Email: contacto@mochilonga.com.pe</p>
+                <p>Teléfono: +1 234 567 890</p>
+            </div>
         </div>
-    </section>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mochilonga. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
