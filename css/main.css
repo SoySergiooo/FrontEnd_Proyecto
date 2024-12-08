@@ -540,6 +540,7 @@ a:hover {
     background-color: #333333;
     color: white;
     padding: 40px 20px;
+    text-align: center;
     font-size: 14px;
 }
 
@@ -602,4 +603,65 @@ a:hover {
 
 .footer-bottom p {
     margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 15px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    footer .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    footer .footer-links a {
+        font-size: 14px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+
+/* Media Query para Formulario  de Login */
+@media screen and (max-width: 768px) {
+    .contenedor {
+        width: 90%;
+        padding: 20px;
+    }
+
+    form h1 {
+        font-size: 20px;
+    }
+
+    .input-form {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .centrado {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    form h1 {
+        font-size: 18px;
+    }
+
+    .contenedor {
+        padding: 15px;
+    }
+
+    .centrado {
+        font-size: 12px;
+    }
 }
