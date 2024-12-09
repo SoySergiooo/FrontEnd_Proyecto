@@ -154,6 +154,7 @@ header nav ul li img {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px solid #ccc;
 }
 
 .section-nav {
@@ -188,11 +189,20 @@ header nav ul li img {
     width: 300px;
 }
 
-#productos {
+.wrap-productos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
     gap: 20px;
+    justify-content: center;
+    margin:0 auto;
 }
+@media screen and (min-width: 920px) {
+    .wrap-productos{
+      width: 1140px;
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    }
+}
+
 
 .art-producto {
     background-color: white;
@@ -200,6 +210,10 @@ header nav ul li img {
     padding: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .art-producto img {
@@ -664,4 +678,18 @@ a:hover {
     .centrado {
         font-size: 12px;
     }
+}
+
+/*..............*/
+.BotonAgregarCarrito{
+    background-color: #333;
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    
+}
+.BotonAgregarCarrito:hover{
+    background-color: #444;
 }
