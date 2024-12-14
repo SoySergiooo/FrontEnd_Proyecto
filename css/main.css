@@ -680,7 +680,7 @@ a:hover {
     }
 }
 
-/*..............*/
+
 .BotonAgregarCarrito{
     background-color: #333;
     color: #fff;
@@ -688,7 +688,6 @@ a:hover {
     padding: 10px 24px;
     border: none;
     cursor: pointer;
-    
 }
 .BotonAgregarCarrito:hover{
     background-color: #444;
