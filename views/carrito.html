@@ -5,6 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Carrito</title>
     <link rel="stylesheet" href="../css/main.css">
+
+    <script>
+
+let Carrito = [
+    {   idItem: 1,
+        NombreItem: "Cartera A",
+        PrecioUnitario: 200,
+        Cantidad: 1
+    },
+
+    {   idItem: 2,
+        NombreItem: "Mochila A",
+        PrecioUnitario: 150,
+        Cantidad: 2
+    },
+    {   idItem: 3,
+        NombreItem: "Maleta A",
+        PrecioUnitario: 220,
+        Cantidad: 2 }
+];
+
+function generarTabla() {
+    const tablaBody = document.getElementById('tabla-body');
+    let total = 0;
+
+    tablaBody.innerHTML = '';
+
+    Carrito.forEach(item => {
+        const subtotal = item.PrecioUnitario * item.Cantidad;
+        total += subtotal; // Aqui se calcula el subtotal de cada item de la lista
+
+        // Crear cada fila de la tabla y hace un innerHTML
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td><img src="../images/${item.NombreItem}.png" alt="${item.NombreItem}" class="imagen-producto"></td>
+            <td>${item.NombreItem}</td>
+            <td>
+                <div class="input-cantidad">
+                    <button type="button" class="btn-cantidad" onclick="actualizarCantidad(${item.idItem}, -1)">-</button>
+                    <input type="text" value="${item.Cantidad}" class="cantidad-producto" readonly>
+                    <button type="button" class="btn-cantidad" onclick="actualizarCantidad(${item.idItem}, 1)">+</button>
+                </div>
+            </td>
+            <td>S/. ${item.PrecioUnitario.toFixed(2)}</td>
+            <td>S/. ${subtotal.toFixed(2)}</td>
+        `;
+        tablaBody.appendChild(fila);
+    });
+
+    document.getElementById('total').innerHTML = `<strong>S/. ${total.toFixed(2)}</strong>`;
+}
+
+// Función para actualizar cantidad
+function actualizarCantidad(idItem, cambio) {
+    // Encontrar el item en el carrito
+    const item = Carrito.find(producto => producto.idItem === idItem);
+    if (item) {
+        item.Cantidad = Math.max(1, item.Cantidad + cambio); // Evitar cantidades negativas
+        generarTabla(); // Regenerar la tabla
+    }
+}
+
+document.addEventListener('DOMContentLoaded', generarTabla);
+
+
+
+
+    </script>
+
+
+
+
+
 </head>
 <body>
     <header>
@@ -35,74 +108,36 @@
         </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>Mi Carrito</h2>
-            <table class="tabla-carrito">
-                <thead>
-                    <tr>
-                        <th>Imagen</th>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Precio Unitario</th>
-                        <th>Subtotal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="../images/Cartera A.png" alt="Cartera A" class="imagen-producto"></td>
-                        <td>Cartera A</td>
-                        <td>
-                            <div class="input-cantidad">
-                                <button type="button" class="btn-cantidad">-</button>
-                                <input type="text" value="1" class="cantidad-producto" readonly>
-                                <button type="button" class="btn-cantidad">+</button>
-                            </div>
-                        </td>
-                        <td>S/. 200.00</td>
-                        <td>S/. 200.00</td>
-                    </tr>
-                    <tr>
-                        <td><img src="../images/Mochila A.png" alt="Mochila A" class="imagen-producto"></td>
-                        <td>Mochila A</td>
-                        <td>
-                            <div class="input-cantidad">
-                                <button type="button" class="btn-cantidad">-</button>
-                                <input type="text" value="2" class="cantidad-producto" readonly>
-                                <button type="button" class="btn-cantidad">+</button>
-                            </div>
-                        </td>
-                        <td>S/. 150.00</td>
-                        <td>S/. 300.00</td>
-                    </tr>
-                    <tr>
-                        <td><img src="../images/Maleta A.png" alt="Maleta A" class="imagen-producto"></td>
-                        <td>Maleta A</td>
-                        <td>
-                            <div class="input-cantidad">
-                                <button type="button" class="btn-cantidad">-</button>
-                                <input type="text" value="2" class="cantidad-producto" readonly>
-                                <button type="button" class="btn-cantidad">+</button>
-                            </div>
-                        </td>
-                        <td>S/. 220.00</td>
-                        <td>S/. 440.00</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="4"><strong>Total</strong></td>
-                        <td><strong>S/. 940.00</strong></td>
-                    </tr>
-                </tfoot>
-            </table>
 
-            <div class="botones-carrito">
-                <a href="index.html" class="btn-regresar">Volver</a>
-                <a class="btn-pago-able" href="Pago.html">Ir a Pagar</a>
-            </div>
-        </section>
-    </main>
+<main>
+    <section>
+        <h2>Mi Carrito</h2>
+        <table class="tabla-carrito">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-body">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"><strong>Total</strong></td>
+                    <td id="total"><strong>S/. 0.00</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="botones-carrito">
+            <a href="index.html" class="btn-regresar">Volver</a>
+            <a class="btn-pago-able" href="Pago.html">Ir a Pagar</a>
+        </div>
+    </section>
+</main>
 
     <footer class="footer">
         <div class="footer-contenedor">
