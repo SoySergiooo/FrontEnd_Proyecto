@@ -693,42 +693,14 @@ a:hover {
     background-color: #444;
 }
 
-/* Estilo general para los botones de filtro */
-.btn-filter {
-    background-color: #f8f9fa;
-    color: #333;
-    border: 2px solid #333;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
 
-.btn-filter:hover {
-    background-color: #007bff;
-    color: #fff;
-    transform: scale(1.1);
-}
+form div.incorrect input{
+          border-color: #f06272;
+          background-color:#fff2f3;
+      }
+      #error-message{
+          color:#f06272;
+      }
 
-.btn-filter:active {
-    background-color: #0056b3;
-    border-color: #004085;
-    transform: scale(0.95);
-}
 
-.btn-filter.selected {
-    background-color: #007bff;
-    color: #fff;
-    border-color: #0056b3;
-}
 
-/* ------- ESTILO PARA MENSAJES DE ERROR EN EL LOGIN ---------*/
-
-#error {
-    color: red;
-    font-size: 16px;
-}
-
-/* ----------------------------------------------
