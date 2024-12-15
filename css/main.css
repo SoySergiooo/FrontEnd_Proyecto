@@ -723,3 +723,12 @@ a:hover {
     color: #fff;
     border-color: #0056b3;
 }
+
+/* ------- ESTILO PARA MENSAJES DE ERROR EN EL LOGIN ---------*/
+
+#error {
+    color: red;
+    font-size: 16px;
+}
+
+/* ----------------------------------------------

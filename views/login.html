@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="../css/main.css">
+    <script src="../scripts/usuarios.js"></script>
 </head>
 <body>
     <header>
@@ -25,6 +26,9 @@
                 <li class="icon" id="icono-login"><a href="login.html">
                     <img src="../images/Login.png" alt="Login" class="icono-carrito-vacio">
                 </a></li>
+                <li class="icon" id="icono-logout"><a href="#" onclick="return cerrarSesion()">
+                    <img src="../images/Logout.png" alt="Cerrar Sesión" class="icono-carrito-vacio">
+                </a></li>
                 <li class="icon" id="icono-carrito-vacio"><a href="carrito-empty.html">
                     <img src="../images/cartEmpty.png" alt="Carrito Vacio" class="icono-carrito-vacio">
                 </a></li>
@@ -38,7 +42,8 @@
     <main>
         <section>
             <div class="contenedor">
-                <form action="/login" method="post">
+                <div id="mensaje"></div>
+                <form id="form-login">
                     <h1>Iniciar Sesión</h1>
                     <div class="campo">
                         <label for="email">Correo Electrónico</label>
@@ -83,5 +88,6 @@
             <p>&copy; 2024 Mochilonga. Todos los derechos reservados.</p>
         </div>
     </footer>
+    
 </body>
 </html>
