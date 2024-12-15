@@ -1,12 +1,12 @@
 //--------------------SCRIPS DE USUARIOS------------------------//
 
 document.addEventListener('DOMContentLoaded', () => {
-    const formLogin = document.getElementById('form-login');
+    const formLogin = document.getElementById('form');
 
     formLogin.addEventListener('submit', (event) => {
       event.preventDefault();
-      const email = document.getElementById('email').value.trim().toLowerCase();
-      const password = document.getElementById('password').value.trim();
+      const email = document.getElementById('email-input').value.trim().toLowerCase();
+      const password = document.getElementById('password-input').value.trim();
 
       iniciarSesion(email, password);
     });
@@ -55,7 +55,7 @@ const iniciarSesion = (email, password) => {
 }); */
 
 const mostrarMensaje = (mensaje, tipo) => {
-    const mensajeDiv = document.querySelector('#mensaje');
+    const mensajeDiv = document.querySelector('#error-message');
     mensajeDiv.textContent = mensaje;
     mensajeDiv.className = tipo;
 };

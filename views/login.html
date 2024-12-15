@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="../css/main.css">
-    <script type="text/javascript" src="validacion.js" defer></script>
+    <script type="text/javascript" src="../scripts/validacion.js" defer></script>
+    <script type="text/javascript" src="../scripts/usuarios.js" defer></script>
 </head>
 <body>
     <header>
@@ -25,6 +26,9 @@
                 </a></li>
                 <li class="icon" id="icono-login"><a href="login.html">
                     <img src="../images/Login.png" alt="Login" class="icono-carrito-vacio">
+                </a></li>
+                <li class="icon" id="icono-logout"><a href="#" onclick="return cerrarSesion()">
+                    <img src="../images/Logout.png" alt="Cerrar Sesión" class="icono-carrito-vacio">
                 </a></li>
                 <li class="icon" id="icono-carrito-vacio"><a href="carrito-empty.html">
                     <img src="../images/cartEmpty.png" alt="Carrito Vacio" class="icono-carrito-vacio">
