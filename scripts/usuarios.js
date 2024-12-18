@@ -1,5 +1,12 @@
 //--------------------SCRIPS DE USUARIOS------------------------//
 
+/* import usuarios from './arrayUsuarios.js';
+console.log(usuarios); */
+
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+console.log(usuarios);
+
 document.addEventListener('DOMContentLoaded', () => {
     const formLogin = document.getElementById('form');
 
@@ -12,23 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-const usuarios = [
-    {
-        idusuario: "001",
-        email: "usuario1@gmail.com",
-        password: "asdf1234"
-    },
-    {
-        idusuario: "002",
-        email: "usuario2@gmail.com",
-        password: "1234asdf"
-    },
-    {
-        idusuario: "003",
-        email: "usuario3@gmail.com",
-        password: "1234zxcv"
-    },
-];
+
 
 const iniciarSesion = (email, password) => {
     const usuarioEncontrado = usuarios.find(usuario => usuario.email.trim().toLowerCase() === email);
@@ -86,4 +77,5 @@ const cerrarSesion = () => {
 };
 
 document.addEventListener('DOMContentLoaded', configurarInterfaz);
+
 

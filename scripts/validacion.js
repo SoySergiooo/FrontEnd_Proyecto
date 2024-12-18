@@ -1,4 +1,5 @@
 const form=document.getElementById('form');
+const registerForm=document.getElementById('user-register-form');
 const nombre_input = document.getElementById('nombre-input');
 const apellido_input = document.getElementById('apellido-input');
 const dni_input = document.getElementById('dni-input');
@@ -23,6 +24,25 @@ else{
 if(errors.length > 0){
     e.preventDefault()
     error_message.innerText = errors.join(". ")
+}
+
+})
+
+registerForm.addEventListener('submit', (e) =>{
+
+  let errors = []
+
+if(nombre_input){
+  errors = getSignupFormErrors(nombre_input.value, apellido_input.value, dni_input.value, email_input.value, password_input.value, repeat_password_input.value)
+}
+
+else{
+  errors = getLoginFormErrors(email_input.value, password_input.value)
+}
+
+if(errors.length > 0){
+  e.preventDefault()
+  error_message.innerText = errors.join(". ")
 }
 
 })
