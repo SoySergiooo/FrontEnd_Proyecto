@@ -5,79 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Carrito</title>
     <link rel="stylesheet" href="../css/main.css">
-
+    <script src="../scripts/InconoCarrito.js"></script>
     <script>
+        // Leer carrito desde Local Storage
+        function obtenerCarritoDesdeLocalStorage() {
+            return JSON.parse(localStorage.getItem("carrito")) || [];
+        }
 
-let Carrito = [
-    {   idItem: 1,
-        NombreItem: "Cartera A",
-        PrecioUnitario: 200,
-        Cantidad: 1
-    },
+        // Guardar carrito en Local Storage
+        function guardarCarritoEnLocalStorage(carrito) {
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+        }
 
-    {   idItem: 2,
-        NombreItem: "Mochila A",
-        PrecioUnitario: 150,
-        Cantidad: 2
-    },
-    {   idItem: 3,
-        NombreItem: "Maleta A",
-        PrecioUnitario: 220,
-        Cantidad: 2 }
-];
 
-function generarTabla() {
-    const tablaBody = document.getElementById('tabla-body');
-    let total = 0;
+        function generarTabla() {
+            console.log("Generando la tabla...");
+            const tablaBody = document.getElementById('tabla-body');
+            let carrito = obtenerCarritoDesdeLocalStorage();
+            let total = 0;
 
-    tablaBody.innerHTML = '';
+            tablaBody.innerHTML = '';
 
-    Carrito.forEach(item => {
-        const subtotal = item.PrecioUnitario * item.Cantidad;
-        total += subtotal; // Aqui se calcula el subtotal de cada item de la lista
+            // Aca verifica si hay productos
+            if (carrito.length === 0) {
+                const filaVacia = document.createElement('tr');
+                filaVacia.innerHTML = '<td colspan="5">No hay productos en el carrito</td>';
+                tablaBody.appendChild(filaVacia);
+            } else {
+                // Si hay productos crea la tabla
+                carrito.forEach((item) => {
+                    const subtotal = item.precio * item.cantidad;
+                    total += subtotal;
 
-        // Crear cada fila de la tabla y hace un innerHTML
-        const fila = document.createElement('tr');
-        fila.innerHTML = `
-            <td><img src="../images/${item.NombreItem}.png" alt="${item.NombreItem}" class="imagen-producto"></td>
-            <td>${item.NombreItem}</td>
-            <td>
-                <div class="input-cantidad">
-                    <button type="button" class="btn-cantidad" onclick="actualizarCantidad(${item.idItem}, -1)">-</button>
-                    <input type="text" value="${item.Cantidad}" class="cantidad-producto" readonly>
-                    <button type="button" class="btn-cantidad" onclick="actualizarCantidad(${item.idItem}, 1)">+</button>
-                </div>
-            </td>
-            <td>S/. ${item.PrecioUnitario.toFixed(2)}</td>
-            <td>S/. ${subtotal.toFixed(2)}</td>
-        `;
-        tablaBody.appendChild(fila);
-    });
+                    const fila = document.createElement('tr');
+                    fila.innerHTML = `
+                        <td><img src="${item.linkimg}" alt="${item.nombre}" class="imagen-producto"></td>
+                        <td>${item.nombre}</td>
+                        <td>
+                            <div class="input-cantidad">
+                                <button type="button" class="btn-cantidad" onclick="actualizarCantidad(${item.id}, -1)">-</button>
+                                <input type="text" value="${item.cantidad}" class="cantidad-producto" readonly>
+                                <button type="button" class="btn-cantidad" onclick="actualizarCantidad(${item.id}, 1)">+</button>
+                            </div>
+                        </td>
+                        <td>S/. ${item.precio.toFixed(2)}</td>
+                        <td>S/. ${subtotal.toFixed(2)}</td>
+                    `;
+                    tablaBody.appendChild(fila);
+                });
+            }
 
-    document.getElementById('total').innerHTML = `<strong>S/. ${total.toFixed(2)}</strong>`;
-}
+            // Actualizar el total
+            document.getElementById('total').innerHTML = `<strong>S/. ${total.toFixed(2)}</strong>`;
+        }
 
-// Función para actualizar cantidad
-function actualizarCantidad(idItem, cambio) {
-    // Encontrar el item en el carrito
-    const item = Carrito.find(producto => producto.idItem === idItem);
+        // Función para actualizar la cantidad de productos
+        function actualizarCantidad(id, cambio) {
+    let carrito = obtenerCarritoDesdeLocalStorage();
+    const item = carrito.find(producto => producto.id === id);
+
     if (item) {
-        item.Cantidad = Math.max(1, item.Cantidad + cambio); // Evitar cantidades negativas
-        generarTabla(); // Regenerar la tabla
+        // Si la cantidad es 1 y se presiona "-", eliminar el producto
+        if (item.cantidad === 1 && cambio === -1) {
+            carrito = carrito.filter(producto => producto.id !== id); // Eliminar el producto
+        } else {
+            // En otros casos, actualizar la cantidad
+            item.cantidad = Math.max(1, item.cantidad + cambio); // Evitar cantidades negativas
+        }
+
+        guardarCarritoEnLocalStorage(carrito); // Actualizar localStorage
+        generarTabla(); // Actualizar la tabla
     }
 }
 
-document.addEventListener('DOMContentLoaded', generarTabla);
-
-
-
-
+        // Generar la tabla al cargar la página
+        document.addEventListener('DOMContentLoaded', generarTabla);
     </script>
-
-
-
-
-
 </head>
 <body>
     <header>
@@ -108,36 +111,36 @@ document.addEventListener('DOMContentLoaded', generarTabla);
         </nav>
     </header>
 
+    <main>
+        <section>
+            <h2>Mi Carrito</h2>
+            <table class="tabla-carrito">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-body">
+                    <!-- Los productos se agregarán aquí -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4"><strong>Total</strong></td>
+                        <td id="total"><strong>S/. 0.00</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
 
-<main>
-    <section>
-        <h2>Mi Carrito</h2>
-        <table class="tabla-carrito">
-            <thead>
-                <tr>
-                    <th>Imagen</th>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                    <th>Precio Unitario</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody id="tabla-body">
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="4"><strong>Total</strong></td>
-                    <td id="total"><strong>S/. 0.00</strong></td>
-                </tr>
-            </tfoot>
-        </table>
-
-        <div class="botones-carrito">
-            <a href="index.html" class="btn-regresar">Volver</a>
-            <a class="btn-pago-able" href="Pago.html">Ir a Pagar</a>
-        </div>
-    </section>
-</main>
+            <div class="botones-carrito">
+                <a href="index.html" class="btn-regresar">Volver</a>
+                <a class="btn-pago-able" href="Pago.html">Ir a Pagar</a>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="footer-contenedor">
@@ -166,3 +169,12 @@ document.addEventListener('DOMContentLoaded', generarTabla);
     </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
