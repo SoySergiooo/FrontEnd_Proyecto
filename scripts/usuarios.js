@@ -20,6 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+  function borrarUsuario(email) {
+    // Obtener el arreglo de usuarios desde localStorage
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    
+    // Filtrar el usuario que deseas eliminar por su email
+    usuarios = usuarios.filter(usuario => usuario.email !== email);
+
+    // Guardar el nuevo arreglo actualizado en localStorage
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    console.log('Usuario eliminado');
+}
+
+borrarUsuario('');
+
 
 const iniciarSesion = (email, password) => {
     const usuarioEncontrado = usuarios.find(usuario => usuario.email.trim().toLowerCase() === email);

@@ -29,6 +29,10 @@ formulario.addEventListener("submit", function (evento) {
         return mostrarMensaje("Las contraseñas no coinciden.", "error");
     }
 
+    if (!nombres || !apellidos || !dni || !email || !password || !document.getElementById("repeat-password-input").value) {
+        return mostrarMensaje("Todos los campos son obligatorios.", "error");
+    }
+
     // Crear el nuevo usuario
     const nuevoUsuario = {
         nombres: nombres,
