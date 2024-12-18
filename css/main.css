@@ -737,9 +737,15 @@ form div.incorrect input{
 
 /* ------- ESTILO PARA MENSAJES DE ERROR EN EL LOGIN ---------*/
 
-#error {
+.error {
     color: red;
     font-size: 16px;
+}
+
+.success {
+    color: green;
+    font-size: 16px;
+    align-items: center;
 }
 
 /* ----------------------------------------------
